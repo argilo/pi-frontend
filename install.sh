@@ -3,7 +3,9 @@
 set -e
 
 sudo raspi-config nonint do_blanking 1
+sudo raspi-config nonint do_change_locale en_US.UTF-8
 sudo raspi-config nonint do_change_timezone "America/Toronto"
+sudo raspi-config nonint do_configure_keyboard us
 sudo raspi-config nonint do_memory_split 128
 sudo raspi-config nonint do_overscan 1
 
