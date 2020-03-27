@@ -3,6 +3,7 @@
 set -e
 
 sudo raspi-config nonint do_blanking 1
+sudo raspi-config nonint do_change_timezone "America/Toronto"
 sudo raspi-config nonint do_memory_split 128
 sudo raspi-config nonint do_overscan 1
 
