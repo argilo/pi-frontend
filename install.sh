@@ -9,6 +9,8 @@ sudo raspi-config nonint do_configure_keyboard us
 sudo raspi-config nonint do_memory_split 128
 sudo raspi-config nonint do_overscan 1
 
+sudo sed -i -e 's/#dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
+
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
 if ! grep "myth30" /etc/apt/sources.list; then
@@ -19,11 +21,15 @@ sudo apt-get update
 sudo apt-get install -y \
     ir-keytable \
     lirc \
+    lirc-compat-remotes \
     mythtv-light \
     || true
 
 sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
 sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
+sudo sed -i -e 's/devinput/default/' -e 's/auto/\/dev\/lirc0/' /etc/lirc/lirc_options.conf
+sudo ln -s /usr/share/lirc/remotes/mceusb/lircd.conf.mceusb /etc/lirc/lircd.conf.d/mce.conf
+sudo ln -s /usr/share/lirc/remotes/hauppauge/lircd.conf.hauppauge /etc/lirc/lircd.conf.d/hauppauge.conf
 sudo apt-get install -y
 
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then

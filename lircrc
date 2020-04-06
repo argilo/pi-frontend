@@ -279,3 +279,732 @@ begin
   button = KEY_LAST
   config = H
 end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = RecTV
+    config = R
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = Guide
+    config = S
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_BACK
+    config = Escape
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_OK
+    config = Return
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_RIGHT
+    config = Right
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_LEFT
+    config = Left
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_DOWN
+    config = Down
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_UP
+    config = Up
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = Hash
+    config = D
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_AGAIN
+    config = Q
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_NEXT
+    config = Z
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_STOP
+    config = Escape
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_PAUSE
+    config = P
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_RECORD
+    config = R
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_PLAY
+    config = P
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_REWIND
+    config = <
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_FORWARD
+    config = >
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_CHANNELDOWN
+    config = Down
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_CHANNELUP
+    config = Up
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_VOLUMEDOWN
+    config = [
+    repeat = 1
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_VOLUMEUP
+    config = ]
+    repeat = 1
+    delay = 4
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = More
+    config = I
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_MUTE
+    config = |
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_HOME
+    config = M
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_ENTER
+    config = Return
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_9
+    config = 9
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_8
+    config = 8
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_7
+    config = 7
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_6
+    config = 6
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_5
+    config = 5
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_4
+    config = 4
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_3
+    config = 3
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_2
+    config = 2
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_1
+    config = 1
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_0
+    config = 0
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_RED
+    config = D
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_GREEN
+    config = A
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_YELLOW
+    config = W
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = KEY_BLUE
+    config = T
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = Aspect
+    config = W
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = mceusb
+    prog = mythtv
+    button = Teletext
+    config = T
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Record
+    config = R
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Guide
+    config = S
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Back/Exit
+    config = Escape
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = OK
+    config = Return
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Right
+    config = Right
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Left
+    config = Left
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Down
+    config = Down
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Up
+    config = Up
+    repeat = 2
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = #
+    config = D
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Replay/SkipBackward
+    config = Q
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = SkipForward
+    config = Z
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Stop
+    config = Escape
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Pause
+    config = P
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Record
+    config = R
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Play
+    config = P
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Rewind
+    config = <
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Forward
+    config = >
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Ch-
+    config = Down
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Ch+
+    config = Up
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Vol-
+    config = [
+    repeat = 1
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Vol+
+    config = ]
+    repeat = 1
+    delay = 4
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Menu/i
+    config = I
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Mute
+    config = |
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Go
+    config = M
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Enter
+    config = Return
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 9
+    config = 9
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 8
+    config = 8
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 7
+    config = 7
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 6
+    config = 6
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 5
+    config = 5
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 4
+    config = 4
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 3
+    config = 3
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 2
+    config = 2
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 1
+    config = 1
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = 0
+    config = 0
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Red
+    config = D
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Green
+    config = A
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Yellow
+    config = W
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Blue
+    config = T
+    repeat = 0
+    delay = 0
+end
+
+begin
+    remote = Hauppauge_350
+    prog = mythtv
+    button = Prev.Ch
+    config = H
+    repeat = 0
+    delay = 0
+end
