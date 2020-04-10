@@ -17,19 +17,19 @@
 
 set -e
 
-sudo raspi-config nonint do_blanking 1
-sudo raspi-config nonint do_change_locale en_US.UTF-8
-sudo raspi-config nonint do_change_timezone "America/Toronto"
-sudo raspi-config nonint do_configure_keyboard us
-sudo raspi-config nonint do_memory_split 192
-sudo raspi-config nonint do_overscan 1
-
 read -p "Use GPIO infrared receiver? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo sed -i -e 's/#dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
 fi
+
+sudo raspi-config nonint do_blanking 1
+sudo raspi-config nonint do_change_locale en_US.UTF-8
+sudo raspi-config nonint do_change_timezone "America/Toronto"
+sudo raspi-config nonint do_configure_keyboard us
+sudo raspi-config nonint do_memory_split 192
+sudo raspi-config nonint do_overscan 1
 
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
