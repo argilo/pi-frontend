@@ -46,3 +46,5 @@ if ! grep "ir-keytable" /etc/rc.local; then
     sudo cp ir-keytable-hauppauge.cfg /etc/
     sudo sed -i -e '$iir-keytable -p rc-5,rc-6\nir-keytable --write=/etc/ir-keytable-hauppauge.cfg\n' /etc/rc.local
 fi
+
+echo "Successfully configured MythTV."
