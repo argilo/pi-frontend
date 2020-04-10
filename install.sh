@@ -21,7 +21,9 @@ read -p "Use GPIO infrared receiver? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    sudo sed -i -e 's/#dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
+    sudo sed -i -e 's/^#dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
+else
+    sudo sed -i -e 's/^dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
 fi
 
 sudo raspi-config nonint do_blanking 1
