@@ -35,8 +35,8 @@ sudo raspi-config nonint do_overscan 1
 
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
-if ! grep "myth30" /etc/apt/sources.list; then
-    sudo sh -c "echo deb http://dl.bintray.com/bennettpeter/deb/ buster myth30 >> /etc/apt/sources.list"
+if ! grep "myth31" /etc/apt/sources.list; then
+    sudo sh -c "echo deb http://dl.bintray.com/bennettpeter/deb/ buster myth31 >> /etc/apt/sources.list"
     wget -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
 fi
 sudo apt-get update
