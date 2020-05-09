@@ -17,15 +17,6 @@
 
 set -e
 
-read -p "Use GPIO infrared receiver? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    sudo sed -i -e 's/^#dtoverlay=gpio-ir,gpio_pin=17/dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
-else
-    sudo sed -i -e 's/^dtoverlay=gpio-ir,gpio_pin=17/#dtoverlay=gpio-ir,gpio_pin=17/' /boot/config.txt
-fi
-
 sudo raspi-config nonint do_blanking 1
 sudo raspi-config nonint do_change_locale en_US.UTF-8
 sudo raspi-config nonint do_change_timezone "America/Toronto"
@@ -43,15 +34,11 @@ sudo apt-get update
 sudo apt-get install -y \
     ir-keytable \
     lirc \
-    lirc-compat-remotes \
     mythtv-light \
     || true
 
 sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
 sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
-sudo sed -i -e 's/devinput/default/' -e 's/auto/\/dev\/lirc0/' /etc/lirc/lirc_options.conf
-sudo ln -s /usr/share/lirc/remotes/mceusb/lircd.conf.mceusb /etc/lirc/lircd.conf.d/mce.conf
-sudo ln -s /usr/share/lirc/remotes/hauppauge/lircd.conf.hauppauge /etc/lirc/lircd.conf.d/hauppauge.conf
 sudo apt-get install -y
 
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
