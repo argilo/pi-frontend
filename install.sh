@@ -23,6 +23,7 @@ sudo raspi-config nonint do_change_timezone "America/Toronto"
 sudo raspi-config nonint do_configure_keyboard us
 sudo raspi-config nonint do_memory_split 128
 sudo raspi-config nonint do_overscan 1
+sudo raspi-config nonint do_boot_behaviour B2
 
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
@@ -55,5 +56,11 @@ if ! grep "ir-keytable" /etc/rc.local; then
     sudo cp ir-keytable-hauppauge.cfg /etc/
     sudo sed -i -e '$iir-keytable -p rc-5,rc-6\nir-keytable --write=/etc/ir-keytable-hauppauge.cfg\n' /etc/rc.local
 fi
+
+if ! grep "vm.swappiness=5" /etc/sysctl.conf; then
+    sudo sh -c "echo vm.swappiness=5 >> /etc/sysctl.conf"
+fi
+
+echo "@reboot sleep 10 && QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/" | crontab
 
 echo "Successfully configured MythTV."
