@@ -38,10 +38,6 @@ sudo apt-get install -y \
     mythtv-light \
     || true
 
-sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
-sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
-sudo apt-get install -y
-
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
     mkdir -p ~/.config/autostart
     cp mythtv.desktop ~/.config/autostart/
