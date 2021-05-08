@@ -34,8 +34,10 @@ sudo apt-get install -y \
     lirc \
     || true
 
-wget https://bgsite.net/mythtv/mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
-sudo gdebi mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
+if ! command -v mythfrontend &> /dev/null; then
+    wget https://bgsite.net/mythtv/mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
+    sudo gdebi -n mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
+fi
 
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
     mkdir -p ~/.config/autostart
@@ -56,6 +58,6 @@ if ! grep "vm.swappiness=5" /etc/sysctl.conf; then
     sudo sh -c "echo vm.swappiness=5 >> /etc/sysctl.conf"
 fi
 
-echo "@reboot sleep 10 && QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/" | crontab
+echo '@reboot sleep 10 && QT_QPA_EGLFS_ALWAYS_SET_MODE="1" QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/' | crontab
 
 echo "Successfully configured MythTV."
