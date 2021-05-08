@@ -27,16 +27,17 @@ sudo raspi-config nonint do_boot_behaviour B2
 
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
-if ! grep "myth31" /etc/apt/sources.list; then
-    sudo sh -c "echo deb http://dl.bintray.com/bennettpeter/deb/ buster myth31 >> /etc/apt/sources.list"
-    wget -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
-fi
 sudo apt-get update
 sudo apt-get install -y \
+    gdebi-core \
     ir-keytable \
     lirc \
-    mythtv-light \
     || true
+
+if ! command -v mythfrontend &> /dev/null; then
+    wget https://bgsite.net/mythtv/mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
+    sudo gdebi -n mythtv-light_31.0-144-g563a05b7a8-0_armhf_buster.deb
+fi
 
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
     mkdir -p ~/.config/autostart
@@ -50,13 +51,13 @@ fi
 
 if ! grep "ir-keytable" /etc/rc.local; then
     sudo cp ir-keytable-hauppauge.cfg /etc/
-    sudo sed -i -e '$iir-keytable -p rc-5,rc-6\nir-keytable --write=/etc/ir-keytable-hauppauge.cfg\n' /etc/rc.local
+    sudo sed -i -e '$iir-keytable -p rc-5,rc-6\nir-keytable --write=/etc/ir-keytable-hauppauge.cfg\necho performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor\n' /etc/rc.local
 fi
 
 if ! grep "vm.swappiness=5" /etc/sysctl.conf; then
     sudo sh -c "echo vm.swappiness=5 >> /etc/sysctl.conf"
 fi
 
-echo "@reboot sleep 10 && QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/" | crontab
+echo '@reboot sleep 10 && QT_QPA_EGLFS_ALWAYS_SET_MODE="1" QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/' | crontab
 
 echo "Successfully configured MythTV."
