@@ -55,6 +55,10 @@ if ! grep "ir-keytable" /etc/rc.local; then
     sudo systemctl disable raspi-config
 fi
 
+sudo systemctl disable cups
+sudo systemctl disable cups-browsed
+sudo systemctl disable ModemManager.service
+
 if ! grep "vm.swappiness=5" /etc/sysctl.conf; then
     sudo sh -c "echo vm.swappiness=5 >> /etc/sysctl.conf"
 fi
