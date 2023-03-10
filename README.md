@@ -6,7 +6,7 @@ I use this script to turn a Raspberry Pi 4 into a MythTV frontend.
 Installation
 ------------
 
-After installing Raspbian, log in and run the following:
+After installing Raspberry Pi OS (64-bit), log in and run the following:
 
 ```
 git clone https://github.com/argilo/pi-frontend.git
