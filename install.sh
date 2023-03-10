@@ -25,6 +25,8 @@ sudo raspi-config nonint do_memory_split 128
 sudo raspi-config nonint do_overscan 1
 sudo raspi-config nonint do_boot_behaviour B2
 
+sudo sed -i s/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-fkms-v3d/ /boot/config.txt
+
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
 sudo apt-get update
