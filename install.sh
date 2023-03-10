@@ -49,9 +49,17 @@ if [ ! -e ~/.mythtv/lircrc ]; then
     cp lircrc ~/.mythtv/
 fi
 
-if ! grep "ir-keytable" /etc/rc.local; then
+if [ ! -e /etc/ir-keytable-hauppauge.toml ]; then
     sudo cp ir-keytable-hauppauge.toml /etc/
-    sudo sed -i -e '$iir-keytable -p rc-5,rc-6\nir-keytable --write=/etc/ir-keytable-hauppauge.toml\necho performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor\n' /etc/rc.local
+fi
+
+if [ ! -e /etc/systemd/system/ir-keytable-setup.service ]; then
+    sudo cp ir-keytable-setup.service /etc/systemd/system/
+    sudo systemctl enable ir-keytable-setup
+fi
+
+if ! grep "scaling_governor" /etc/rc.local; then
+    sudo sed -i -e '$iecho performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor\n' /etc/rc.local
     sudo systemctl disable raspi-config
 fi
 
