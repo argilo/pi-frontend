@@ -39,8 +39,8 @@ sudo apt-get install -y \
     || true
 
 if ! command -v mythfrontend &> /dev/null; then
-    wget http://argilo-backend.local/mythtv/20230122-mythtv-light_32.0-86-g35f323c8e6-0_arm64_bullseye.deb
-    sudo gdebi -n 20230122-mythtv-light_32.0-86-g35f323c8e6-0_arm64_bullseye.deb
+    wget http://argilo-backend.local/mythtv/mythtv-light_33.1-12-gc4b7e4c433-0_arm64_bullseye.deb
+    sudo gdebi -n mythtv-light_33.1-12-gc4b7e4c433-0_arm64_bullseye.deb
 fi
 
 if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
