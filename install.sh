@@ -44,8 +44,8 @@ if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
     cp mythtv.desktop ~/.config/autostart/
 fi
 
-if ! grep "event6" /etc/lirc/lirc_options.conf; then
-    sudo sed -i -e 's/auto/\/dev\/input\/event6/' /etc/lirc/lirc_options.conf
+if ! grep "event4" /etc/lirc/lirc_options.conf; then
+    sudo sed -i -e 's/auto/\/dev\/input\/event4/' /etc/lirc/lirc_options.conf
 fi
 
 if [ ! -e ~/.mythtv/lircrc ]; then
