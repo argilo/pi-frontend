@@ -22,7 +22,7 @@ sudo raspi-config nonint do_change_locale en_US.UTF-8
 sudo raspi-config nonint do_change_timezone "America/Toronto"
 sudo raspi-config nonint do_configure_keyboard us
 sudo raspi-config nonint do_overscan 1
-sudo raspi-config nonint do_boot_behaviour B2
+sudo raspi-config nonint do_boot_behaviour B4
 sudo raspi-config nonint do_hostname argilo-frontend
 
 sudo rm -f /etc/xdg/autostart/piwiz.desktop
@@ -74,7 +74,5 @@ sudo systemctl disable ModemManager.service
 if ! grep "vm.swappiness=5" /etc/sysctl.conf; then
     sudo sh -c "echo vm.swappiness=5 >> /etc/sysctl.conf"
 fi
-
-echo '@reboot sleep 10 && QT_QPA_EGLFS_ALWAYS_SET_MODE="1" QT_QPA_PLATFORM=eglfs mythfrontend --logpath=/tmp/' | crontab
 
 echo "Successfully configured MythTV."
