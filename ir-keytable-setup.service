@@ -5,7 +5,7 @@ After=network.service
 [Service]
 Type=oneshot
 ExecStartPre=/bin/sleep 10
-ExecStart=ir-keytable -p rc-5 --write=/etc/ir-keytable-hauppauge.toml
+ExecStart=ir-keytable -s rc2 -p rc-5 --write=/etc/ir-keytable-hauppauge.toml
 
 [Install]
 WantedBy=default.target
