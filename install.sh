@@ -58,7 +58,7 @@ if [ ! -e /etc/rc_keymaps/ir-keytable-hauppauge.toml ]; then
 fi
 
 if ! grep ir-keytable-hauppauge /etc/rc_maps.cfg; then
-    echo "mceusb  *                        /etc/rc_keymaps/ir-keytable-hauppauge.toml" >> /etc/rc_maps.cfg
+    sudo sh -c "echo 'mceusb  *                        /etc/rc_keymaps/ir-keytable-hauppauge.toml' >> /etc/rc_maps.cfg"
 fi
 
 if ! grep "scaling_governor" /etc/rc.local; then
