@@ -53,13 +53,12 @@ if [ ! -e ~/.mythtv/lircrc ]; then
     cp lircrc ~/.mythtv/
 fi
 
-if [ ! -e /etc/ir-keytable-hauppauge.toml ]; then
-    sudo cp ir-keytable-hauppauge.toml /etc/
+if [ ! -e /etc/rc_keymaps/ir-keytable-hauppauge.toml ]; then
+    sudo cp ir-keytable-hauppauge.toml /etc/rc_keymaps/
 fi
 
-if [ ! -e /etc/systemd/system/ir-keytable-setup.service ]; then
-    sudo cp ir-keytable-setup.service /etc/systemd/system/
-    sudo systemctl enable ir-keytable-setup
+if ! grep ir-keytable-hauppauge /etc/rc_maps.cfg; then
+    echo "mceusb  *                        /etc/rc_keymaps/ir-keytable-hauppauge.toml" >> /etc/rc_maps.cfg
 fi
 
 if ! grep "scaling_governor" /etc/rc.local; then
