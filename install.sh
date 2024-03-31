@@ -42,8 +42,10 @@ fi
 mkdir -p ~/.config/autostart
 cp mythtv.desktop ~/.config/autostart/
 
-if ! grep "event4" /etc/lirc/lirc_options.conf; then
-    sudo sed -i -e 's/auto/\/dev\/input\/event4/' /etc/lirc/lirc_options.conf
+sudo cp 90-hauppauge-remote.rules /etc/udev/rules.d/
+
+if ! grep "hauppauge_remote" /etc/lirc/lirc_options.conf; then
+    sudo sed -i -e 's/auto/\/dev\/hauppauge_remote/' /etc/lirc/lirc_options.conf
 fi
 
 mkdir -p ~/.mythtv
