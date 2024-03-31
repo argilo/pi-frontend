@@ -39,23 +39,17 @@ if ! command -v mythfrontend &> /dev/null; then
     sudo gdebi -n 20231014-mythtv-light_33.1-22-g26e76a3949-0_arm64_bookworm.deb
 fi
 
-if [ ! -e ~/.config/autostart/mythtv.desktop ]; then
-    mkdir -p ~/.config/autostart
-    cp mythtv.desktop ~/.config/autostart/
-fi
+mkdir -p ~/.config/autostart
+cp mythtv.desktop ~/.config/autostart/
 
 if ! grep "event4" /etc/lirc/lirc_options.conf; then
     sudo sed -i -e 's/auto/\/dev\/input\/event4/' /etc/lirc/lirc_options.conf
 fi
 
-if [ ! -e ~/.mythtv/lircrc ]; then
-    mkdir -p ~/.mythtv
-    cp lircrc ~/.mythtv/
-fi
+mkdir -p ~/.mythtv
+cp lircrc ~/.mythtv/
 
-if [ ! -e /etc/rc_keymaps/ir-keytable-hauppauge.toml ]; then
-    sudo cp ir-keytable-hauppauge.toml /etc/rc_keymaps/
-fi
+sudo cp ir-keytable-hauppauge.toml /etc/rc_keymaps/
 
 if ! grep ir-keytable-hauppauge /etc/rc_maps.cfg; then
     sudo sh -c "echo 'mceusb  *                        /etc/rc_keymaps/ir-keytable-hauppauge.toml' >> /etc/rc_maps.cfg"
