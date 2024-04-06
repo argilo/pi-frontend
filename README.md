@@ -1,7 +1,7 @@
 pi-frontend
 ===========
 
-I use this script to turn a Raspberry Pi 4 into a MythTV frontend.
+I use this script to turn a Raspberry Pi 5 into a MythTV frontend.
 
 Installation
 ------------
