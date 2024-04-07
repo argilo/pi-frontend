@@ -27,8 +27,6 @@ sudo raspi-config nonint do_overscan 1
 sudo raspi-config nonint do_boot_behaviour B4
 sudo raspi-config nonint do_hostname argilo-frontend
 
-sudo rm -f /etc/xdg/autostart/piwiz.desktop
-
 sudo apt-get update
 sudo apt-get install -y \
     ir-keytable \
