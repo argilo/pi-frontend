@@ -66,9 +66,4 @@ if ! grep ir-keytable-hauppauge /etc/rc_maps.cfg; then
     sudo sh -c "echo 'mceusb  *                        /etc/rc_keymaps/ir-keytable-hauppauge.toml' >> /etc/rc_maps.cfg"
 fi
 
-if ! grep "scaling_governor" /etc/rc.local; then
-    sudo sed -i -e '$iecho performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor\n' /etc/rc.local
-    sudo systemctl disable raspi-config
-fi
-
 echo "Successfully configured MythTV."
