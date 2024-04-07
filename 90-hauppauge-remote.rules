@@ -1,1 +1,2 @@
 SUBSYSTEMS=="input", ATTRS{id/product}=="0008", ATTRS{id/vendor}=="1784", SYMLINK += "hauppauge_remote"
+SUBSYSTEMS=="input", ATTRS{id/product}=="0011", ATTRS{id/vendor}=="1784", SYMLINK += "hauppauge_remote"
