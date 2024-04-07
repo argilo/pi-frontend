@@ -17,6 +17,8 @@
 
 set -e
 
+MYTHTV_BRANCH=fixes/33
+
 sudo raspi-config nonint do_blanking 1
 sudo raspi-config nonint do_change_locale en_US.UTF-8
 sudo raspi-config nonint do_change_timezone "America/Toronto"
@@ -29,14 +31,21 @@ sudo rm -f /etc/xdg/autostart/piwiz.desktop
 
 sudo apt-get update
 sudo apt-get install -y \
-    gdebi-core \
     ir-keytable \
     lirc \
     || true
 
-if ! command -v mythfrontend &> /dev/null; then
-    wget http://argilo-backend.local/mythtv/20231014-mythtv-light_33.1-22-g26e76a3949-0_arm64_bookworm.deb
-    sudo gdebi -n 20231014-mythtv-light_33.1-22-g26e76a3949-0_arm64_bookworm.deb
+if [ ! -f /usr/bin/mythfrontend ]; then
+    mkdir ~/build
+    git clone --branch "${MYTHTV_BRANCH}" https://github.com/MythTV/packaging.git ~/build
+    cd ~/build/packaging/deb
+    ./build-debs.sh "${MYTHTV_BRANCH}"
+    dpkg-scanpackages -m . > Packages
+    echo "deb [trusted=yes] file://${HOME}/build/packaging/deb ./" | sudo tee /etc/apt/sources.list.d/mythtv.list
+    sudo apt-get update
+    sudo apt-get install -y mythtv-frontend
+    sudo usermod -a -G mythtv "${USER}"
+    cd -
 fi
 
 mkdir -p ~/.config/autostart
