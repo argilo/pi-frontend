@@ -34,8 +34,8 @@ sudo apt-get install -y \
     || true
 
 if [ ! -f /usr/bin/mythfrontend ]; then
-    mkdir ~/build
-    git clone --branch "${MYTHTV_BRANCH}" https://github.com/MythTV/packaging.git ~/build
+    mkdir -p ~/build
+    git clone --branch "${MYTHTV_BRANCH}" https://github.com/MythTV/packaging.git ~/build/packaging
     cd ~/build/packaging/deb
     ./build-debs.sh "${MYTHTV_BRANCH}"
     dpkg-scanpackages -m . > Packages
