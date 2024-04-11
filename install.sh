@@ -47,7 +47,7 @@ if [ ! -f /usr/bin/mythfrontend ]; then
 fi
 
 mkdir -p ~/.config/autostart
-cp mythtv.desktop ~/.config/autostart/
+ln -s /usr/share/applications/mythtv.desktop ~/.config/autostart/mythtv.desktop
 
 sudo cp 90-hauppauge-remote.rules /etc/udev/rules.d/
 
