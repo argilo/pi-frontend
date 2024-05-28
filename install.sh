@@ -17,7 +17,7 @@
 
 set -e
 
-MYTHTV_BRANCH=fixes/33
+MYTHTV_BRANCH=fixes/34
 
 sudo raspi-config nonint do_blanking 1
 sudo raspi-config nonint do_change_locale en_US.UTF-8
